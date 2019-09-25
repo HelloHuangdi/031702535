@@ -102,7 +102,11 @@ public class lib {
 				}catch(NullPointerException ex) {
 					break;
 				}
-			}	
+			}
+			if(hang.size() < m*n) {
+				System.out.println("读取文件为空……");
+				System.exit(1);
+			}
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
@@ -167,10 +171,6 @@ public class lib {
 	 * @param m
 	 */
 	public void Slipt(String line) {
-//		String li[] = line.split(" ");
-//		for(int i = 0; i < m; i++) {
-//			shudoPan[j][i] = Integer.parseInt(li[i]);
-//		}
 		int k = 0;
 		for(int i = 0; i < line.length(); i++) {
 			if(line.charAt(i) != ' ') {
@@ -203,8 +203,7 @@ public class lib {
 							}else {
 								bw.write(String.valueOf(shudoPan[i][k]));
 								bw.write("\n");
-							}
-								
+							}	
 						}
 					}
 					bw.write("\n");
